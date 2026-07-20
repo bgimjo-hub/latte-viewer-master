@@ -173,27 +173,14 @@ data/slides.ts 파일을 엽니다
 남은 6개의 id를 1번부터 순서대로 다시 매깁니다 (1, 2, 3, 4, 5, 6)
 예시 (지금 21개 중 앞의 6개만 남긴다고 하면)
 
-ts
-export const slides: Slide[] = [
-  { id: 1, title: "Cover", sub: null, category: null, type: "image", src: "/media/image1.png" },
-  { id: 2, title: "Matcha Latte — Catalog", sub: "catalog", category: "Matcha Latte", type: "image", src: "/media/image2.png" },
-  { id: 3, title: "Matcha Latte — Catalog (KR)", sub: "catalogKr", category: "Matcha Latte", type: "image", src: "/media/image3.png" },
-  { id: 4, title: "Matcha Latte — Food Pairing", sub: "pairing", category: "Matcha Latte", type: "image", src: "/media/image4.png" },
-  { id: 5, title: "Matcha Latte — Intro Video", sub: "video", category: "Matcha Latte", type: "video", src: "/media/media1.mp4", poster: "/media/image5.png" },
-  { id: 6, title: "Roasted Sweet Potato Latte — Catalog", sub: "catalog", category: "Roasted Sweet Potato Latte", type: "image", src: "/media/image6.png" },
-];
-
-
-자동으로 바뀌는 것들
-
+- **자동으로 바뀌는 것들**:
 카운터가 "01 / 6"으로 표시됨
 사이드바 목차에 6개만 나옴
 상단 진행바(progress bar)도 6개 기준으로 계산됨
 마지막 슬라이드(6번)에서는 "다음" 버튼이 자동으로 비활성화됨
 
 
-주의할 점
-
+- **주의할점**:
 id는 반드시 1부터 순서대로, 중간 번호 빠짐없이 매겨야 해요. (1,2,3,4,5,6 ✅ / 1,3,5,6,9,10 ❌ — 순서 이동 로직이 배열 순서를 기준으로 동작해서요)
 안 쓰는 이미지/영상 파일은 public/media/ 폴더에 그냥 남아있어도 상관없어요 (안 불러오니까 용량만 차지, 지워도 되고 안 지워도 됨)
 즉 **"배열에 몇 개 있느냐 = 총 페이지 수"**라서, 항목 지우고 번호만 1부터 다시 매기면 끝이에요.
