@@ -1,0 +1,11 @@
+# 배포할 때 절대 올리면 안 되는 것들
+node_modules
+.next
+out
+build
+.DS_Store
+*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
